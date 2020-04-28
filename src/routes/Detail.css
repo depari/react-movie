@@ -1,0 +1,24 @@
+.detail {
+    padding: 150px;
+    font-size: large;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    text-decoration: none;
+    color: #b2b3bc;    
+
+}
+
+.detail .detail_description {
+    padding : 30px;
+}
+
+.detail .movie_year {
+    text-align: right;
+    margin: 0;
+    font-weight: 300;
+  }
+
+
+
+
