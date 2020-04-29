@@ -1,4 +1,6 @@
 import React from 'react';
+import Img from 'react-image';
+import VisibilitySensor from 'react-visibility-sensor';
 import "./Detail.css"
 
 class Detail extends React.Component {
@@ -16,8 +18,15 @@ class Detail extends React.Component {
         
         if(location.state) {    
             return (<>
-            <div className="detail" >                
-                <img  src={location.state.poster_detail} alt={location.state.title} title={location.state.title}/>
+            <div className="detail" >  
+                <div  >
+                    <VisibilitySensor>             
+                        <Img 
+                        src={location.state.poster_detail} alt={location.state.title} title={location.state.title}
+                        loader={<div className ="detail_poster_holder">Loading...</div>}
+                        />
+                     </VisibilitySensor> 
+                </div>
                 <div className="detail_description">
                     <h1 className="movie_title">{location.state.title}</h1>
                     <h3 className="movie_year">{location.state.year}</h3>
