@@ -4,6 +4,7 @@ import Home from "./routes/Home";
 import About from "./routes/About";
 import Detail from './routes/Detail';
 import Navigation from "./components/Navigation";
+import CacheRoute, {CacheSwitch} from 'react-router-cache-route'
 
 
 function App() {
@@ -11,9 +12,11 @@ function App() {
     <>
       <HashRouter>
         <Navigation />
-        <Route path="/" exact={true} component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/movie/:id" component={Detail} />        
+        <CacheSwitch>
+          <CacheRoute path="/" exact={true} component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/movie/:id" component={Detail} />        
+        </CacheSwitch>
       </HashRouter>
     <footer></footer>
 
